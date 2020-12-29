@@ -1,0 +1,91 @@
+@import '~izitoast/dist/css/iziToast';
+
+/* Custom iziToast class */
+.iziToast-wrapper {
+  padding: 30px 35px;
+}
+.custom-izi {
+  min-width: 400px;
+  font-family: 'Rubik', sans-serif;
+  border-radius: 0px;
+  &.iziToast-color-red {
+    color: #822e1d;
+    background-color: #feded7;
+    border-color: #fed0c7;
+    & .iziToast-message,
+    .iziToast-icon {
+      color: #822e1d;
+    }
+    & .iziToast-close {
+      color: #822e1d;
+    }
+  }
+  &.iziToast-color-green {
+    color: #2f6424;
+    background-color: #def3da;
+    border-color: #d1eecb;
+    & .iziToast-message,
+    .iziToast-icon {
+      color: #2f6424;
+    }
+    & .iziToast-close {
+      color: #2f6424;
+    }
+  }
+  &.iziToast-color-yellow {
+    color: #85621b;
+    background-color: #fff2d6;
+    border-color: #ffecc6;
+    & .iziToast-message,
+    .iziToast-icon {
+      color: #85621b;
+    }
+    & .iziToast-close {
+      color: #85621b;
+    }
+  }
+  &.iziToast-color-blue {
+    color: #0a4285;
+    background-color: #d0e5ff;
+    border-color: #bddbff;
+    & .iziToast-message,
+    .iziToast-icon {
+      color: #0a4285;
+    }
+    & .iziToast-close {
+      color: #0a4285;
+    }
+  }
+  & .iziToast-icon {
+    font-size: 24px !important;
+    top: 18px !important;
+  }
+  & .iziToast-message ul li:not(:last-child) {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.15em;
+  }
+  & .iziToast-close {
+    background-size: 14px;
+    background: none;
+    height: auto;
+    width: auto;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 0.5;
+  }
+  & .iziToast-close:hover {
+    opacity: 1;
+  }
+  & .iziToast-close::before {
+    content: '\F0156';
+    font-family: 'Material Design Icons';
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+  &::after {
+    box-shadow: rgb(153, 153, 153) 0px 0px 12px 0px;
+    border-radius: 0px;
+  }
+}

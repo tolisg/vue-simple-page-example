@@ -1,0 +1,5 @@
+{
+  "messages": {
+    "password": "Password requires 1 of each of the following: uppercase letter, lowercase letter, number, special character."
+  }
+}

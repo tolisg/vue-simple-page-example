@@ -1,0 +1,99 @@
+
+.title {
+  color: $primary;
+}
+.username {
+  color: $white;
+}
+.main-wrapper {
+  padding-top: 75px;
+}
+
+span.is-invalid {
+  color: #EB0600
+}
+label.required::before {
+	content: "*";
+	font-weight: normal;
+	color: #fa5838;
+	font-size: 0.75031rem;
+	vertical-align: top;
+	display: inline-block;
+	line-height: 0.875rem;
+}
+
+// Footer
+.portal-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
+}
+.portal-container {
+  flex: 1 0 auto;
+  padding-top: 5em;
+  margin-bottom: 1.5rem;
+}
+.portal-footer {
+  padding-left: 0;
+  padding-right: 0;
+}
+.portal-footer__top {
+  padding: 40px 0;
+  background-color: $skin5;
+}
+.portal-footer__bottom {
+  background-color: $gray-300;
+  padding: 0.5rem 0px 0.5rem 0px;
+  text-align: center;
+}
+
+.portal-footer .services-widget .logo {
+  margin-bottom: 34px;
+}
+.portal-footer .services-widget .logo img {
+  width: 90px;
+}
+.portal-footer .services-widget .services-list {
+  border-right: 1px solid $gray-700;
+  margin-right: 30px;
+  padding-bottom: 30px;
+}
+.portal-footer .services-widget .services-list li a {
+  color: $gray-300;
+}
+.portal-footer .contact-widget {
+  color: $gray-500;
+}
+.portal-footer .contact-widget .content {
+  color: $gray-300;
+  padding-right: 50px;
+  padding-bottom: 22px;
+  margin-right: 20px;
+  border-right: 1px solid $gray-700;
+}
+
+.portal-footer .social-widget {
+  color: $gray-500;
+}
+.portal-footer .social-widget .social-list {
+  padding: 0;
+}
+.portal-footer .social-widget .social-list li {
+  float: left;
+  border-radius: 3px;
+  list-style: none;
+  width: 36px;
+  height: 36px;
+  display: table;
+  text-align: center;
+  background: lighten($skin5, 5%);
+  margin-right: 5px;
+  transition: all 0.3s;
+}
+.portal-footer .social-widget .social-list li a {
+  display: table-cell;
+  vertical-align: middle;
+  color: $gray-300;
+  font-size: 18px;
+}
