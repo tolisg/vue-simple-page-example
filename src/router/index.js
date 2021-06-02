@@ -3,11 +3,6 @@ import VueRouter from 'vue-router';
 
 import HomePage from '@/views/HomePage/HomePage.vue';
 import NotFoundPage from '@/views/NotFoundPage/NotFoundPage.vue';
-import Default from '@/views/Layouts/Default/Default.vue';
-import Login from '@/views/Layouts/Login/Login.vue';
-
-Vue.component('default-layout', Default);
-Vue.component('login-layout', Login);
 
 Vue.use(VueRouter);
 

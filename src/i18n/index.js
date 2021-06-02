@@ -1,12 +1,13 @@
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 import { localize } from 'vee-validate';
+import { LANG_FALLBACK, LANG } from '@/shared/config';
 import enLocale from './locales/en.json';
 
 Vue.use(VueI18n);
 
 export const supportedlanguages = ['en', 'el'];
-const defaultLang = process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'en';
+const defaultLang = LANG_FALLBACK || 'en';
 const loadedLanguages = [defaultLang];
 
 export function isValidLanguage(lang) {
@@ -28,6 +29,7 @@ export function getStartingLocale() {
 
 function loadLocaleMessages() {
   const locales = enLocale;
+  // console.log(locales);
   const messages = {
     en: locales
   };
@@ -35,18 +37,23 @@ function loadLocaleMessages() {
 }
 
 async function setValidatorLanguage(lang) {
+  let defaultMessages = {};
   // Load default validator messages
-  const defaultMessages = await import(`vee-validate/dist/locale/${lang}.json`);
+  if (lang === 'el') {
+    defaultMessages = await import('vee-validate/dist/locale/el.json');
+  } else {
+    defaultMessages = await import('vee-validate/dist/locale/en.json');
+  }
   // Load custom validator messages
-  const customMessages = await import(`./i18n_${lang}.json`);
+  const customMessages = await import(/* webpackChunkName: "i18-[request]" */ `./i18n_${lang}.json`);
   // Merge default and custom messages
   defaultMessages.default.messages = { ...defaultMessages.messages, ...customMessages.messages };
   localize(lang, defaultMessages);
 }
 
 export const i18n = new VueI18n({
-  locale: process.env.VUE_APP_I18N_LOCALE || 'en',
-  fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'en',
+  locale: LANG || 'en',
+  fallbackLocale: LANG_FALLBACK || 'en',
   messages: loadLocaleMessages()
 });
 export function setI18nLanguage(lang) {
